@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6efdd">
+<meta name="description" content="免費線上羅盤看陽宅：輸入大門度數或用手機指南針量，點選房間與屋外形勢，一次排出八宅、沈氏玄空飛星、內外局與化解建議的報告；度數與格局只在你的裝置裡計算，不會上傳。">
+<title>陽宅堪輿｜免費線上羅盤・八宅・玄空飛星・內外局｜阿良</title>
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://house0975715071.github.io/fengshui/">
+<meta property="og:title" content="陽宅堪輿｜免費線上羅盤・八宅・玄空飛星・內外局｜阿良">
+<meta property="og:description" content="免費線上羅盤看陽宅：輸入大門度數或用手機指南針量，點選房間與屋外形勢，一次排出八宅、沈氏玄空飛星、內外局與化解建議的報告；度數與格局只在你的裝置裡計算，不會上傳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://house0975715071.github.io/fengshui/">
+<meta property="og:image" content="https://house0975715071.github.io/fengshui/og.png?v=f494d2cf">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="陽宅堪輿：線上羅盤・八宅・玄空飛星・內外局，由 中信房屋 阿良 製作">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="陽宅堪輿">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="陽宅堪輿｜免費線上羅盤・八宅・玄空飛星・內外局｜阿良">
+<meta name="twitter:description" content="免費線上羅盤看陽宅：輸入大門度數或用手機指南針量，點選房間與屋外形勢，一次排出八宅、沈氏玄空飛星、內外局與化解建議的報告；度數與格局只在你的裝置裡計算，不會上傳。">
+<meta name="twitter:image" content="https://house0975715071.github.io/fengshui/og.png?v=f494d2cf">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232a2420'/%3E%3Ccircle cx='32' cy='32' r='24' fill='%23f6efdd'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%232a2420' stroke-width='1.6'/%3E%3Cpath d='M32 8l5.5 24h-11z' fill='%23b3261e'/%3E%3Cpath d='M32 56l-5.5-24h11z' fill='%232a2420'/%3E%3Ccircle cx='32' cy='32' r='3.2' fill='%23c9a24a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=981ddbf2">
+<script src="compat.js?v=981ddbf2"></script>
+<script type="module" src="app.js?v=981ddbf2"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="22" fill="#fbf7ec" stroke="#2a2420" stroke-width="1.4"/>
+        <circle cx="24" cy="24" r="16.5" fill="none" stroke="#c9a24a" stroke-width="1.2"/>
+        <circle cx="24" cy="24" r="10" fill="none" stroke="#2a2420" stroke-width=".8" stroke-dasharray="1.6 2"/>
+        <path d="M24 5l3.6 19h-7.2z" fill="#b3261e"/>
+        <path d="M24 43l-3.6-19h7.2z" fill="#2a2420"/>
+        <circle cx="24" cy="24" r="2.6" fill="#c9a24a"/>
+      </svg>
+      <div class="brand-text">
+        <h1 class="brand-name">陽宅堪輿</h1>
+        <p class="brand-sub">羅盤定位・八宅・玄空飛星・內外局</p>
+      </div>
+    </div>
+    <div class="header-side">
+      <p class="maker">由 中信房屋 阿良 製作</p>
+      <button id="btn-demo" class="btn btn-ghost" type="button">帶入示範資料，直接看報告</button>
+    </div>
+  </div>
+</header>
+
+<nav class="wrap stepper-wrap" aria-label="堪輿步驟">
+  <ol class="stepper" id="stepper">
+    <li><button type="button" data-step="1"><span class="st-num">1</span><span class="st-text">羅盤定位</span></button></li>
+    <li><button type="button" data-step="2"><span class="st-num">2</span><span class="st-text">房屋資料</span></button></li>
+    <li><button type="button" data-step="3"><span class="st-num">3</span><span class="st-text">內局格局</span></button></li>
+    <li><button type="button" data-step="4"><span class="st-num">4</span><span class="st-text">外局</span></button></li>
+    <li><button type="button" data-step="5"><span class="st-num">5</span><span class="st-text">報告</span></button></li>
+  </ol>
+</nav>
+
+<main id="main" class="wrap">
+  <noscript><p class="card noscript">這個工具要開啟 JavaScript 才能使用。</p></noscript>
+
+  <!-- 步驟 1：羅盤定位 -->
+  <section id="step-1" class="step" data-step="1" aria-labelledby="h-step-1">
+    <h2 id="h-step-1" class="step-title"><span class="step-no">一</span>羅盤定位</h2>
+    <p class="step-lead">站在大門內、面朝門外量度數。這個度數就是房子的「向」，反方向是「坐」，後面所有的盤都從這裡起。</p>
+
+    <div class="s1-grid">
+      <div class="compass-box">
+        <svg id="compass-svg" viewBox="0 0 400 400" role="img" aria-label="羅盤：北在上，紅線是向、虛線是坐"></svg>
+      </div>
+
+      <div class="s1-controls">
+        <div class="field">
+          <label for="deg-input">大門朝向度數（0～359.9°）</label>
+          <div class="deg-row">
+            <input id="deg-input" type="number" inputmode="decimal" min="0" max="359.9" step="0.1" placeholder="例：184.5" autocomplete="off">
+            <span class="deg-unit" aria-hidden="true">°</span>
+          </div>
+          <div class="fine-row" role="group" aria-label="微調度數">
+            <button type="button" class="btn btn-fine" data-fine="-1" aria-label="減 1 度">−1</button>
+            <button type="button" class="btn btn-fine" data-fine="-0.1" aria-label="減 0.1 度">−0.1</button>
+            <button type="button" class="btn btn-fine" data-fine="0.1" aria-label="加 0.1 度">+0.1</button>
+            <button type="button" class="btn btn-fine" data-fine="1" aria-label="加 1 度">+1</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="mount-select">或直接選 24 山（帶入該山的中心度數）</label>
+          <select id="mount-select"></select>
+        </div>
+
+        <div id="facing-note" class="facing-note" aria-live="polite"></div>
+
+        <div class="sensor-box">
+          <button id="btn-sensor" type="button" class="btn btn-line">用手機指南針量</button>
+          <div id="sensor-panel" class="sensor-panel" hidden>
+            <p class="sensor-read">目前讀數 <span id="sensor-value">—</span></p>
+            <p id="sensor-mount" class="sensor-mount"></p>
+            <div class="btn-row">
+              <button id="btn-sensor-lock" type="button" class="btn btn-primary">鎖定這個度數</button>
+              <button id="btn-sensor-stop" type="button" class="btn btn-line">停止</button>
+            </div>
+          </div>
+          <p id="sensor-msg" class="sensor-msg" role="status"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card howto">
+      <h3 class="card-title">怎麼量才準</h3>
+      <ul class="plain-list">
+        <li>站在大門內、背對屋內、面朝門外；羅盤（或手機）放平，上緣對準門外。</li>
+        <li>遠離鐵門、鐵窗、電器與磁扣手機殼，往屋內退一兩步再量；換兩三個位置多量幾次。</li>
+        <li>羅盤看地盤正針（磁北）；手機指南針請設「磁北」，關掉「真北」選項。</li>
+        <li>手機感測器容易受干擾，數字一直跳時以實體羅盤為準。</li>
+        <li>公寓大樓有人以整棟大樓的坐向論，也有人以自家大門論；本工具以自家大門量。</li>
+        <li>量到兩山交界（騎線）時，建議換位置重量；量不準時，兩個山向都看一次。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 步驟 2：房屋資料 -->
+  <section id="step-2" class="step" data-step="2" aria-labelledby="h-step-2" hidden>
+    <h2 id="h-step-2" class="step-title"><span class="step-no">二</span>房屋資料</h2>
+    <p class="step-lead">填入住年、樓層與住的人。入住年決定玄空起哪一運的盤，出生年用來算每個人的八宅命卦。</p>
+
+    <div class="card">
+      <h3 class="card-title">元運與樓層</h3>
+      <div class="form-grid">
+        <div class="field">
+          <label for="movein-year">入住（或大修）年，西元</label>
+          <input id="movein-year" type="number" inputmode="numeric" min="1864" max="2100" step="1" placeholder="例：2025" autocomplete="off">
+          <p class="hint">以入住或大修（換大門、整間重新裝潢）那一年起運；不知道就填房子落成年。</p>
+          <p id="period-rule" class="hint">盤依入住或大修那年的運起；旺衰依現在的運看。舊房子交運後，盤不變，星的旺衰改看現在的運。</p>
+        </div>
+        <div class="field">
+          <label for="period-select">元運</label>
+          <select id="period-select"></select>
+          <p id="period-note" class="hint strong-hint" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="floor">住在第幾樓</label>
+          <input id="floor" type="number" inputmode="numeric" min="-20" max="300" step="1" placeholder="例：7" autocomplete="off">
+          <p class="hint">地下室填負數。樓層用河圖數看五行：一六水、二七火、三八木、四九金、五十土。</p>
+        </div>
+        <div class="field">
+          <label for="total-floors">整棟總樓層</label>
+          <input id="total-floors" type="number" inputmode="numeric" min="1" max="300" step="1" placeholder="例：14" autocomplete="off">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">居住者（最多 6 位）</h3>
+      <p class="hint">第一位固定是戶主，「樓層與命宅」只看戶主計分；其他人一樣會列出命卦與吉方。</p>
+      <div id="people-list" class="people-list"></div>
+      <div class="btn-row">
+        <button id="btn-add-person" type="button" class="btn btn-line">新增一位居住者</button>
+      </div>
+      <p id="people-msg" class="hint" role="status"></p>
+      <p class="hint">立春前出生要填月日：國曆 1 月到 2 月初（立春約在 2 月 3～5 日）出生的人，命卦要用前一年算。</p>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">八宅與玄空起法</h3>
+      <div class="form-grid">
+        <div class="field">
+          <label for="bazhai-mode">八宅模式</label>
+          <select id="bazhai-mode">
+            <option value="sit">坐山立極</option>
+            <option value="door">門上起伏位</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tigua-select">玄空起盤（進階）</label>
+          <select id="tigua-select">
+            <option value="auto">自動：正向用下卦、兼向用替卦</option>
+            <option value="off">一律用下卦</option>
+            <option value="on">用替卦（正向時不適用）</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="wuti-select">替卦遇五黃（進階）</label>
+          <select id="wuti-select">
+            <option value="none">五黃無替（預設）</option>
+            <option value="self">本山替星（另一派）</option>
+          </select>
+          <p class="hint">兼向用替卦時，運盤的坐方或向方是五黃，要怎麼起星。通行教本多採五黃無替，仍以五入中；另一派取本山替星，只當參考。</p>
+        </div>
+      </div>
+      <ul class="mode-list">
+        <li data-mode="sit"><b>坐山立極：</b>《八宅明鏡》的正統起法，以坐山所屬的卦為宅卦，伏位在坐方。</li>
+        <li data-mode="door"><b>門上起伏位：</b>以大門所在宮位的卦為宅卦，伏位在門；有些老師用在大樓公寓。大門吉凶兩種起法都以坐山論。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 步驟 3：內局格局 -->
+  <section id="step-3" class="step" data-step="3" aria-labelledby="h-step-3" hidden>
+    <h2 id="h-step-3" class="step-title"><span class="step-no">三</span>內局格局</h2>
+    <p class="step-lead">以房屋中心點立極，把平面圖用九宮格切開，點每一格標出裡面有什麼房間。</p>
+
+    <div class="orient-bar">
+      <p id="orient-note" class="orient-note"></p>
+      <button id="btn-orient" type="button" class="btn btn-line">改成北在上</button>
+    </div>
+
+    <div id="grid-rooms" class="nine nine-input" role="group" aria-label="九宮房間配置"></div>
+
+    <div id="room-picker" class="picker card" hidden>
+      <h3 id="room-picker-title" class="card-title"></h3>
+      <div id="room-chips" class="chips" role="group" aria-labelledby="room-picker-title"></div>
+      <p id="room-hint" class="hint pick-hint" role="status"></p>
+      <div class="btn-row">
+        <button id="btn-room-done" type="button" class="btn btn-line">收起</button>
+      </div>
+    </div>
+
+    <p class="hint">沒有標大門時，以向宮當大門。也有人用米字線（每方 45°）分宮，兩種分法遇到邊界的房間可能不同。</p>
+
+    <div class="card">
+      <h3 class="card-title">爐灶與床位（選填）</h3>
+      <div class="form-grid">
+        <div class="field">
+          <label for="stove-mouth">灶口朝向</label>
+          <select id="stove-mouth"></select>
+          <p class="hint">灶口（火門）現在多以爐台開關那一面朝的方向為準，也就是站在爐前煮飯時背後的方向。八宅講究灶座壓凶方、火門向吉方；火門的吉方以宅卦的游年吉方為準。</p>
+        </div>
+      </div>
+      <div id="bed-list" class="bed-list"></div>
+      <p class="hint">床頭朝向＝躺下時頭頂指的方向（床頭靠的那面牆）。戶主沒填床位時，以主臥所在的宮來看。</p>
+    </div>
+  </section>
+
+  <!-- 步驟 4：外局 -->
+  <section id="step-4" class="step" data-step="4" aria-labelledby="h-step-4" hidden>
+    <h2 id="h-step-4" class="step-title"><span class="step-no">四</span>外局</h2>
+    <p class="step-lead">標出房子四周看得到的形勢：高樓、道路、水、空地或形煞。俗話說「高一寸為山，低一寸為水」。</p>
+
+    <div class="orient-bar">
+      <p class="orient-note orient-note-copy"></p>
+      <button type="button" class="btn btn-line btn-orient-alt">改成北在上</button>
+    </div>
+
+    <div id="grid-ext" class="nine nine-input" role="group" aria-label="外局八方"></div>
+
+    <div id="ext-picker" class="picker card" hidden>
+      <h3 id="ext-picker-title" class="card-title"></h3>
+      <div id="ext-chips" class="chip-groups" role="group" aria-labelledby="ext-picker-title"></div>
+      <div class="btn-row">
+        <button id="btn-ext-done" type="button" class="btn btn-line">收起</button>
+      </div>
+    </div>
+
+    <p class="hint">四獸：面朝門外，前朱雀、後玄武、左青龍、右白虎；形勢派講「青龍宜動、白虎宜靜」。高樓、山丘當「山」看；道路當「虛水」看。</p>
+  </section>
+
+  <!-- 步驟 5：報告 -->
+  <section id="step-5" class="step" data-step="5" aria-labelledby="h-step-5" hidden>
+    <h2 id="h-step-5" class="step-title"><span class="step-no">五</span>報告</h2>
+    <p class="step-lead">依前面填的資料算出分數、九宮飛星圖與逐段說明。資料改過之後，要再按一次「產生報告」。</p>
+
+    <div class="analyze-bar">
+      <button id="btn-analyze" type="button" class="btn btn-primary btn-big">產生報告</button>
+      <div id="analyze-msg" class="analyze-msg" role="status"></div>
+    </div>
+    <p id="stale-note" class="stale-note" role="status" hidden>資料已改，請重新產生報告</p>
+    <p class="print-empty">尚未產生報告。</p>
+
+    <div id="report" class="report" hidden></div>
+  </section>
+
+  <div class="step-nav">
+    <button id="btn-prev" type="button" class="btn btn-line">上一步</button>
+    <button id="btn-next" type="button" class="btn btn-primary">下一步</button>
+  </div>
+</main>
+
+<footer class="site-footer site-foot">
+  <div class="wrap">
+    <section class="card cta" id="cta-card" aria-labelledby="cta-h">
+      <div class="cta-in">
+        <span class="cta-logo" aria-hidden="true">良</span>
+        <div class="cta-body">
+          <h2 id="cta-h" class="cta-h">中信房屋 阿良</h2>
+          <p class="cta-text">看完格局想找房、換屋，或幫家裡挑個好方位，我可以陪你一起看。</p>
+        </div>
+      </div>
+      <div class="cta-btns">
+        <a class="btn btn-chat" href="https://line.me/R/ti/p/%40house168168" target="_blank" rel="noopener noreferrer">加 LINE 聊聊</a>
+        <a class="btn btn-tel" href="tel:0975715071">打電話</a>
+      </div>
+    </section>
+    <section class="notice" aria-labelledby="notice-h">
+      <h2 id="notice-h">使用說明與隱私</h2>
+      <ul>
+        <li>風水分析僅供參考，不同門派的看法與結論可能不同。</li>
+        <li>分數是規則加減出來的參考值，不是機率。</li>
+        <li>移爐、換房這類要動工的建議，請先到現場確認，並擇日再做。</li>
+        <li>風水結論不作為買賣保證，也不作為投資依據。</li>
+        <li>手機指南針會受鐵門、鐵窗、電器干擾，度數以實體羅盤為準；iPhone 第一次用指南針，會跳出允許使用「動作與方向」的視窗，要按允許才讀得到方向。</li>
+        <li>iPhone 需要 iOS 16.4 以上才打得開（設定 › 一般 › 軟體更新）；電腦用新版的 Chrome、Edge、Safari 都可以。</li>
+        <li><b>隱私</b>：大門度數、房間配置、出生年只在你的手機／電腦裡計算，不會送到任何伺服器；關掉網頁，填的資料就不見了。本站不用 cookie、不裝統計或追蹤碼；網站主機（GitHub）跟所有網站一樣會記錄連線紀錄。</li>
+      </ul>
+    </section>
+    <div class="sign">
+      <p>桃竹苗在地深耕 ‧ 買賣委託歡迎指名中信房屋</p>
+      <p>經紀業：中信房屋 中原大學加盟店（加盟經營）叁匠開發企業社 91861935</p>
+      <p>營業員：劉益良(112)登字442586號</p>
+      <p>經紀人：方維磊(98)桃市經字第001068號</p>
+      <p>電話：0975-715-071（電話可以加 LINE）｜LINE：@house168168</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
